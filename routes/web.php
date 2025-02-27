@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlanetController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,3 +35,6 @@ Route::get('/planets', function () {
 
     return view('planets', compact('planets'));
 });
+
+Route::get('/planets', [PlanetController::class, 'index']);
+Route::get('/planets/{planet}', [PlanetController::class, 'show']);
