@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('planets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('solar_system_id')->constrained();
             $table->text('description');
             $table->integer('size_in_km');
             $table->timestamps();
